@@ -1,0 +1,76 @@
+@mixin div-columns($col, $marg: 0px, $direction: left, $display: inline-block) {
+
+  width: calc(100% * #{$col} - #{$marg} - 1px);
+  margin: 0, auto;
+  margin-right: $marg;
+  display: $display;
+  float: $direction;
+
+}
+.row2 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  @include media($mobile) {
+    display: block;
+  }
+}
+
+.column {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  @include media($mobile) {
+    display: block;
+  }
+}
+
+.css3-shadow3{
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.css3-shadow3:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  -webkit-box-shadow:0 0 40px rgba(0,0,0,1);
+  box-shadow:0 0 40px rgba(0,0,0,1);
+  top:10%;
+  right: 50%;
+  height:90%;
+  width:50%;
+  transform: translateX(50%);
+  -moz-border-radius:100%;
+  border-radius:100%;
+
+  @include media($mobile) {
+    display: none;
+  }
+}
+
+.slick-prev:before, .slick-next:before{
+  color:$red;
+  font-size: 40px;
+  z-index: 500 !important;
+}
+
+.slick-next {
+  right: 15px;
+  z-index: 500 !important;
+
+
+}
+.slick-prev {
+  left: 15px;
+  z-index: 500 !important;
+}

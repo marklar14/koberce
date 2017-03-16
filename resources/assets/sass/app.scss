@@ -1,0 +1,1123 @@
+
+// Bootstrap
+@import "scss/font-awesome";
+@import "node_modules/bourbon-neat/app/assets/stylesheets/_neat.scss";
+@import "node_modules/bourbon/app/assets/stylesheets/_bourbon.scss";
+
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
+
+// Variables
+@import "variables";
+@import "animate";
+@import "mixins";
+
+
+h1 {
+
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  @include media($mobile) {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  body {
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Verdana, Arial;
+    font-size: 0.6vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media($mobile) {
+      width: 100%;
+      max-width: 100vw;
+      font-size: 1em;
+    }
+
+
+      header {
+        width: 100%;
+        height: 85%;
+        margin: 0;
+        padding: 0;
+
+        background-image: url("/koberce/images/pozadi.jpg");
+        background-position: 20% center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+
+        animation-name: show2;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+
+
+        position: relative;
+        z-index: 1;
+
+        @include media($mobile) {
+          height: 100%;
+        }
+
+
+        .hlavicka {
+          height: 15vh;
+          width: 100%;
+          position: absolute;
+          top: 5vh;
+          background-color: rgba(white, 0.90);
+
+          @include media($mobile) {
+          height: 25vh;
+          position: static;
+          margin-top: 0vh;
+          }
+
+          .logo {
+            @include span-columns(2);
+            height:100%;
+            position: relative;
+            opacity: 0;
+
+            animation-name: show2;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+
+            @include media($mobile) {
+              width: 10vw;
+              height: 10vw;
+              clear: both;
+              position: absolute;
+              left: 3vw;
+              top: 12vh;
+            }
+
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              height:90%;
+              width: auto;
+
+              @include media($mobile) {
+                top: 0;
+                left: 10vw;
+                height: 10vh;
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+          }
+
+          .nadpis {
+            position: absolute;
+            right: 10px;
+            bottom: -5px;
+
+            @include media($mobile) {
+               position: static;
+              display: none;
+            }
+
+            h1 {
+              font-family: trajan, Tahoma, Verdana;
+              color: #333333;
+              font-size: 1.4em;
+              opacity: 0;
+
+              animation-name: show2;
+              animation-duration: 1s;
+              animation-timing-function: ease-in-out;
+              animation-iteration-count: 1;
+              animation-delay: 1.3s;
+              animation-fill-mode: forwards;
+
+              @include media($mobile) {
+                 font-size: 0.8em;
+                text-align: center;
+              }
+
+            }
+
+            @include media($mobile) {
+              position: static;
+            }
+          }
+
+          .odkazy {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+
+            @include media($mobile) {
+              display: none;
+            }
+
+
+            ul {
+              text-align: right;
+              margin: 0;
+              padding: 0;
+
+              @include media($mobile) {
+                width: 100%;
+                position: static;
+                margin: 0;
+                text-align: center;
+              }
+
+              li {
+                  list-style-type: none;
+                   margin: 0;
+                  display: inline-block;
+
+                @include media($mobile) {
+                  display: none;
+                }
+
+
+                a {
+                  background-color: $darkgey;
+                  color: white;
+                  display: block;
+                  border-radius: 3px;
+                  padding: 3px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  text-decoration: none;
+                  border: 1px solid $darkgey;
+
+                  &:hover {
+                    background-color: white;
+                    color: $darkgey;
+
+                  }
+                }
+              }
+              li.resp {
+                @include media($mobile) {
+                  display: block !important;
+                }
+              }
+            }
+
+          }
+        }
+        .sloupec {
+          width: 15vw;
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin: 0 !important;
+
+          @include media($mobile) {
+            width: 100%;
+          }
+
+          .top {
+            height: 5vh;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 15vw;
+            background-color: $red;
+
+            @include media($mobile) {
+              width: 100%;
+              height: 5vh;
+            }
+
+            .radek {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              width: 90%;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+
+              input,button {
+                display: inline-block;
+                border-radius: 3px;
+                height: 2.5vh;
+                margin: 0;
+                border: 0;
+              }
+
+              input {
+                max-width: 60%;
+              }
+
+              button {
+                background-color: $yellow;
+                color: $red;
+                border-radius: 5px;
+
+              }
+            }
+
+          }
+
+          .menu {
+
+            position: absolute;
+            right: 0;
+            top: 20vh;
+            width: 15vw;
+            text-align: center;
+
+            @include media($mobile) {
+              width: 100%;
+              top: 15vh;
+            }
+
+            .resp2 {
+              display: none;
+
+              @include media($mobile) {
+                display: block !important;
+              }
+
+              ul {
+                width: 20%;
+                padding: 0;
+                margin: 0;
+                float: right;
+
+                &:after {
+                  clear: both;
+                }
+
+                li {
+                  padding: 0;
+                  margin: 0;
+                  list-style-type: none;
+                  height: 5vh;
+                  width: 100%;
+                  position: relative;
+                  @include background(linear-gradient($red, #95141c) left repeat);
+
+                  @include media($mobile) {
+                    display: block !important;
+                    text-align: right;
+                  }
+
+                  a {
+                    color: $gold;
+                    font-family: trajan, Tahoma, Verdana;
+                    font-size: 1em;
+
+                    line-height: 5vh;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-decoration: none;
+                    display: block;
+                    cursor: pointer;
+
+                    .cara2 {
+                      background-image:url("/koberce/images/cara.png");
+                      background-repeat: no-repeat;
+                      background-size: contain;
+                      height: 1px;
+                      width: 10vw;
+                      text-align: center;
+                      margin-left: auto;
+                      margin-right: auto;
+                      padding: 0;
+                      display: block;
+                      position: relative;
+                      bottom: 1.7vh;
+                      left: 0vw;
+
+                      z-index: 100;
+
+                      @include media($mobile) {
+                        display: block !important;
+                      }
+                    }
+
+                  }
+                }
+              }
+
+            }
+
+            ul.hlavni {
+              width: 100%;
+              padding: 0;
+              margin: 0;
+              clear: both;
+
+              &:after {
+                clear: both;
+                content: " ";
+
+              }
+              li {
+                  padding: 0;
+                  margin: 0;
+                  list-style-type: none;
+                  height: 5vh;
+                  width: 100%;
+                  position: relative;
+                  @include background(linear-gradient($red, #95141c) left repeat);
+
+                @include media($mobile) {
+                  display: none;
+                }
+
+
+                a {
+                  color: $gold;
+                  font-family: trajan, Tahoma, Verdana;
+                  font-size: 1em;
+
+                  line-height: 5vh;
+                  text-align: center;
+                  margin-left: auto;
+                  margin-right: auto;
+                  text-decoration: none;
+                  display: block;
+                  cursor: pointer;
+
+                  .cara2 {
+                    background-image:url("/koberce/images/cara.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 1px;
+                    width: 10vw;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 0;
+                    display: block;
+                    position: relative;
+                    bottom: 1.7vh;
+                    left: 0vw;
+
+                    z-index: 100;
+
+                    @include media($mobile) {
+                      display: none;
+                    }
+                  }
+
+                }
+
+                .podkategorie {
+                  visibility: hidden;
+                  opacity: 0;
+                  transition: visibility 0s, opacity 0.5s linear;
+                  position: absolute;
+                  right: 15vw;
+                  top: 0vw;
+                  background-color: rgba(white, 0.9);
+                  width: 36vw;
+                  height: 42vh;
+                  border: 1px solid $red;
+                  border-radius: 5px;
+
+                  @include media($mobile) {
+                   position: static;
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    min-height: 50vh;
+                    height: auto;
+                    background-color: rgba(white, 0.9);
+                    display: none;
+                    z-index: 999;
+
+
+                    &:hover {
+                     display: none;
+                    }
+
+                    &:after {
+                      content: '';
+                      display: block;
+                      clear: both;
+                    }
+                  }
+
+                  &:hover {
+                    display: block;
+                  }
+
+                  &:after {
+                    clear: both;
+                  }
+
+                  .sloupec {
+                    @include span-columns(6);
+                    padding: 5px;
+                    float: left;
+                    position: static;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    @include media($mobile) {
+                      padding: 2px;
+                    }
+
+
+
+                    h1,h2 {
+                      font-family: trajanBold, tahoma, verdana, arial, sans-serif;
+                      margin-bottom: 0;
+                      margin-top: 1vh;
+                      font-size: 1.3em;
+                      width: 80%;
+                      color: black;
+                      text-align: center;
+                      margin-left: auto;
+                      margin-right: auto;
+                      border-bottom: 1px solid black;
+
+                      @include media($mobile) {
+                        font-size: 1.2em;
+                        line-height: 1.2em;
+                      }
+
+
+                      a {
+                        width: 80%;
+                        color: black;
+                        line-height: 2.5vh;
+                      }
+                    }
+
+                    ul {
+                      margin: 0;
+                      margin-bottom: 2vh;
+                      padding: 0;
+
+                      @include media($mobile) {
+                       width: 100%;
+                      }
+
+                      li {
+                        background: none;
+                        height: 2.5vh;
+
+                        @include media($mobile) {
+                          height: auto;
+                          width: 100%;
+                        }
+
+
+                        a {
+                          color: $red;
+                          background-color: none;
+                          background: none;
+                          line-height: 2.5vh;
+                          font-size: 0.9em;
+                          display: inline;
+
+                          @include media($mobile) {
+                            font-size: 0.8em;
+                            line-height: 1em;
+                            font-family: tahoma, arial;
+                          }
+
+                          &:hover {
+                            text-decoration: underline;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+              &:hover {
+                .podkategorie {
+                  visibility: visible;
+                  opacity: 1;
+                }
+              }
+              }
+              .kat {
+                overflow-y: visible;
+
+                &:hover {
+                  height: auto !important;
+
+                  .podkategorie {
+                    display: block;
+
+                    @include media($mobile) {
+                      display: none;
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    .content {
+      position: relative;
+      z-index: 15;
+      width: 100%;
+
+
+      @include media($mobile) {
+        width: 100%;
+        position: static;
+        z-index: 1;
+        clear: both;
+        display: block;
+
+        &:before {
+          content: '';
+          display: block;
+          clear: both;
+        }
+      }
+
+      div.boxes {
+        height: 15vh;
+        width: 100%;
+        @include background(linear-gradient($grey, white) left repeat);
+        position: relative;
+        margin-bottom: 5vh;
+
+        z-index: 5;
+
+        @include media($mobile) {
+          width: 100%;
+          position: static;
+          clear: both;
+          z-index: 1;
+        }
+
+        .radek {
+          position: absolute;
+          top: -13vh;
+          left: 0;
+          width: 100%;
+
+          z-index: 80;
+
+          @include media($mobile) {
+           position: static;
+           width: 100%;
+           clear: both;
+
+          }
+
+          .kategorie {
+
+            @include media($mobile) {
+              width: 100%;
+              clear: both;
+
+            }
+
+            div.box
+            {
+              @include span-columns(3);
+              background:rgba($yellow,0.8);
+              border-radius: 3px;
+              margin-left: 1.3vw;
+              height: 28vh;
+              position: relative;
+              z-index: 80;
+              overflow: hidden;
+
+              @include media($mobile) {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                margin-bottom: 1vh;
+                clear: both;
+                background:rgba($yellow,1);
+                position: static;
+                &:before {
+                  clear: both;
+                }
+              }
+
+              .top {
+                height: 13vh;
+                margin: 0;
+                padding: 0;
+                opacity: 0.5;
+                position:absolute;
+                top:0;
+                left:0;
+                width: 100%;
+
+                @include media($mobile) {
+                  display: none;
+                }
+              }
+
+              h1 {
+                color: $red;
+                font-family: trajan,Tahoma, Verdana;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                border-bottom: 1px solid red;
+                width: 80%;
+
+                @include media($mobile) {
+                  text-align: center;
+                  position: static;
+                  z-index: 999;
+                  display: block;
+                  margin-right: auto;
+                  margin-left: auto;
+                  width: 90%;
+                  left: 0;
+                  transform: translateY(0%) translateX(0%);
+                }
+              }
+
+              .hover {
+                visibility: hidden;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 5;
+                overflow: hidden;
+
+                .vice {
+                  position: absolute;
+                  right: 0;
+                  bottom: 2vh;
+                  width: 0vh;
+                  height: 1.5vw;
+                  border-bottom: 1px solid white;
+                  visibility: hidden;
+
+                  button {
+                    display: block;
+                    background-color: #474f5d;
+                    color: white;
+                    padding: 0.5vh;
+                    border: 0;
+                    text-align: left;
+
+                    height: 1.5vw;
+                  }
+                }
+
+              }
+              .obr1 {
+                background-image: url('/koberce/images/obr1.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+              }
+            }
+
+            &:hover {
+
+              .box {
+
+                h1 {
+                  display: none;
+
+                  @include media($mobile) {
+                    display: block;
+                  }
+                }
+                .hover {
+                  visibility: visible !important;
+                  animation-name: posunuti;
+                  animation-duration: 0.35s;
+                  animation-timing-function: ease-in-out;
+                  animation-iteration-count: 1;
+                  left: 0;
+                  z-index: 5;
+
+                  .vice {
+                    visibility: visible !important;
+                    animation-name: posunuti2;
+                    animation-duration: 0.35s;
+                    animation-timing-function: ease-in-out;
+                    animation-iteration-count: 1;
+                    animation-delay: 0.35s;
+                    animation-fill-mode: forwards;
+                    z-index: 5;
+                    width: 7vh;
+                  }
+
+                  @include media($mobile) {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+
+      .bannery {
+        margin-top: 0vh;
+        padding: 0;
+        position: relative;
+
+        z-index: 5;
+
+        @include media($mobile) {
+         width: 100%;
+          height: 25vh;
+          clear: both;
+        }
+
+
+        .banner {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          position: relative;
+          z-index: 10;
+
+          @include media($mobile) {
+            position: static;
+          }
+
+          a {
+            width: 100%;
+            display: block;
+            margin: 0;
+
+            img {
+              width: 100%;
+              margin: 0;
+              padding: 0;
+
+
+            }
+          }
+        }
+      }
+
+      .nabidka {
+        width: 70%;
+        margin-bottom: 5vh;
+        margin-top: 4vh;
+        margin-left: auto;
+        margin-right: auto;
+        float: left;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 1px solid #333333;
+
+        @include media($mobile) {
+          width: 95%;
+          margin-top: 0;
+        }
+
+
+        h1 {
+            font-family: trajanBold, tahoma, verdana, arial, sans-serif;
+            color: #333333;
+            border-bottom: 1px solid #333333;
+            width: 100%;
+            text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 2em;
+
+          @include media($mobile) {
+            font-size: 1.4em;
+          }
+        }
+
+        .leva, .prava {
+          @include span-columns(6);
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+
+
+          @include media($mobile) {
+            width: 95%;
+          }
+
+          h1 {
+            font-family: trajan, tahoma, verdana, arial, sans-serif;
+            color: $red;
+            border-bottom: 1px solid $red;
+            width: 60%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media($mobile) {
+              width: 95%;
+            }
+          }
+
+          p {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            @include media($mobile) {
+              width: 95%;
+            }
+          }
+
+          ul {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media($mobile) {
+              width: 95%;
+              margin: 0;
+              padding: 0;
+            }
+            li {
+              text-align: center;
+              list-style-type: none;
+              color: $red;
+            }
+          }
+
+        }
+
+
+      }
+    }
+
+    footer {
+      width: 100%;
+      clear: both;
+
+      .leva {
+        background-color: #b9c1cf;
+        border-radius: 3px;
+        min-height: 40vh;
+        @include div-columns(4/12);
+        position: relative;
+
+        @include media($mobile) {
+          width: 100%;
+        }
+
+        .radek {
+          margin-left: auto;
+          margin-right: auto;
+          width: 70%;
+          border-bottom: 1px solid white;
+          height: 3.5vh;
+          margin-top: 2vh;
+          padding-bottom: 0;
+          position: relative;
+
+          @include media($mobile) {
+            width: 90%;
+            height: 50px;
+          }
+
+
+          .obr {
+            @include span-columns(3);
+            background-image: url("/koberce/images/label.png");
+            width: 4.5vh;
+            height: 4.5vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            color: white;
+            position: relative;
+
+            @include media($mobile) {
+              width: 50px;
+              height: 50px;
+            }
+
+            i {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform:translateX(-50%) translateY(-50%);
+              font-size: 1.6em;
+            }
+          }
+
+          p {
+            @include span-columns(9);
+            text-align: right;
+            font-weight: bold;
+            float: right;
+            position: relative;
+            top: 20%;
+            right: 0%;
+            transform: translateY(-50%);
+          }
+        }
+
+        .socials {
+          font-size: 4em;
+          text-align: center;
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 4vh;
+          margin-bottom: 4vh;
+          position: absolute;
+          bottom: 1vh;
+          left: 50%;
+          transform: translateX(-50%);
+
+          @include media($mobile) {
+
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-80%);
+          }
+
+
+          a {
+            .fa-twitter-square {
+              color: #00aced;
+
+              &:hover {
+                color: lighten(#00aced, 10%);
+              }
+            }
+            .fa-facebook-square {
+              color: #3B5998;
+
+              &:hover {
+                color: lighten(#3B5998, 10%);
+              }
+            }
+          }
+        }
+      }
+      .stred {
+        background-color: #dedede;
+        border-radius: 3px;
+        @include div-columns(4/12);
+
+        @include media($mobile) {
+          width: 100%;
+        }
+
+        .mapa {
+          width: 70%;
+          height: 20vh;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 2vh;
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+          }
+        }
+
+        h2 {
+          color: $red;
+          text-align: center;
+        }
+      }
+
+      .prava {
+        background-color: #fffce4;
+        border-radius: 3px;
+        @include div-columns(4/12);
+        position: relative;
+
+        @include media($mobile) {
+          width: 100%;
+        }
+
+
+        ul {
+          margin: 0;
+          padding: 0;
+          margin-top: 2vh;
+          width: 70%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          li {
+            list-style-type: none;
+            text-align: center;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+
+            a {
+              font-family: trajan, Tahoma, Verdana;
+              color: $red;
+              border-bottom: 1px solid $red;
+              width: 100%;
+              display: block;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: 2em;
+              text-decoration: none;
+              margin-bottom: 0.5vh;
+
+              &:hover {
+                color: black;
+                border-bottom: 1px solid black;
+              }
+            }
+          }
+        }
+ .ktdesign {
+   position: absolute;
+   bottom: 8px;
+   right: 15px;
+
+   @include media($mobile) {
+     position: static;
+     text-align: center;
+   }
+
+   strong {
+     color: $red;
+   }
+ }
+      }
+    }
+
+  }
+}

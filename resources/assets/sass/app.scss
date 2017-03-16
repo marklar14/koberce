@@ -45,13 +45,13 @@ html {
     }
 
 
-      header {
+      header.main, header.podkategorie {
         width: 100%;
         height: 85%;
         margin: 0;
         padding: 0;
 
-        background-image: url("/koberce/images/pozadi.jpg");
+        background-image: url("/images/pozadi.jpg");
         background-position: 20% center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -277,305 +277,512 @@ html {
 
           }
 
-          .menu {
 
-            position: absolute;
-            right: 0;
-            top: 20vh;
-            width: 15vw;
+          }
+        }
+
+  .menu {
+
+    position: absolute;
+    right: 0;
+    top: 20vh;
+    width: 15vw;
+    text-align: center;
+
+    @include media($mobile) {
+      width: 100%;
+      top: 15vh;
+    }
+
+    .resp2 {
+      display: none;
+
+      @include media($mobile) {
+        display: block !important;
+      }
+
+      ul {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        float: right;
+
+        &:after {
+          clear: both;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          height: 5vh;
+          width: 100%;
+          position: relative;
+          @include background(linear-gradient($red, #95141c) left repeat);
+
+          @include media($mobile) {
+            display: block !important;
+            text-align: right;
+          }
+
+          a {
+            color: $gold;
+            font-family: trajan, Tahoma, Verdana;
+            font-size: 1em;
+
+            line-height: 5vh;
             text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
 
-            @include media($mobile) {
-              width: 100%;
-              top: 15vh;
-            }
+            .cara2 {
+              background-image: url("/images/cara.png");
+              background-repeat: no-repeat;
+              background-size: contain;
+              height: 1px;
+              width: 10vw;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 0;
+              display: block;
+              position: relative;
+              bottom: 1.7vh;
+              left: 0vw;
 
-            .resp2 {
-              display: none;
+              z-index: 100;
 
               @include media($mobile) {
                 display: block !important;
               }
-
-              ul {
-                width: 20%;
-                padding: 0;
-                margin: 0;
-                float: right;
-
-                &:after {
-                  clear: both;
-                }
-
-                li {
-                  padding: 0;
-                  margin: 0;
-                  list-style-type: none;
-                  height: 5vh;
-                  width: 100%;
-                  position: relative;
-                  @include background(linear-gradient($red, #95141c) left repeat);
-
-                  @include media($mobile) {
-                    display: block !important;
-                    text-align: right;
-                  }
-
-                  a {
-                    color: $gold;
-                    font-family: trajan, Tahoma, Verdana;
-                    font-size: 1em;
-
-                    line-height: 5vh;
-                    text-align: center;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-decoration: none;
-                    display: block;
-                    cursor: pointer;
-
-                    .cara2 {
-                      background-image:url("/koberce/images/cara.png");
-                      background-repeat: no-repeat;
-                      background-size: contain;
-                      height: 1px;
-                      width: 10vw;
-                      text-align: center;
-                      margin-left: auto;
-                      margin-right: auto;
-                      padding: 0;
-                      display: block;
-                      position: relative;
-                      bottom: 1.7vh;
-                      left: 0vw;
-
-                      z-index: 100;
-
-                      @include media($mobile) {
-                        display: block !important;
-                      }
-                    }
-
-                  }
-                }
-              }
-
             }
 
-            ul.hlavni {
-              width: 100%;
-              padding: 0;
-              margin: 0;
+          }
+        }
+      }
+
+    }
+
+    ul.hlavni {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      clear: both;
+
+      &:after {
+        clear: both;
+        content: " ";
+
+      }
+      li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        height: 5vh;
+        width: 100%;
+        position: relative;
+        @include background(linear-gradient($red, #95141c) left repeat);
+
+        @include media($mobile) {
+          display: none;
+        }
+
+        a {
+          color: $gold;
+          font-family: trajan, Tahoma, Verdana;
+          font-size: 1em;
+
+          line-height: 5vh;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          text-decoration: none;
+          display: block;
+          cursor: pointer;
+
+          .cara2 {
+            background-image: url("/images/cara.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 1px;
+            width: 10vw;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            display: block;
+            position: relative;
+            bottom: 1.7vh;
+            left: 0vw;
+
+            z-index: 100;
+
+            @include media($mobile) {
+              display: none;
+            }
+          }
+
+        }
+
+        .podkategorie {
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s, opacity 0.5s linear;
+          position: absolute;
+          right: 15vw;
+          top: 0vw;
+          background-color: rgba(white, 0.9);
+          width: 36vw;
+          height: 42vh;
+          border: 1px solid $red;
+          border-radius: 5px;
+
+          @include media($mobile) {
+            position: static;
+            top: 0;
+            right: 0;
+            width: 100%;
+            min-height: 50vh;
+            height: auto;
+            background-color: rgba(white, 0.9);
+            display: none;
+            z-index: 999;
+
+            &:hover {
+              display: none;
+            }
+
+            &:after {
+              content: '';
+              display: block;
               clear: both;
+            }
+          }
 
-              &:after {
-                clear: both;
-                content: " ";
+          &:hover {
+            display: block;
+          }
 
+          &:after {
+            clear: both;
+          }
+
+          .sloupec {
+            @include span-columns(6);
+            padding: 5px;
+            float: left;
+            position: static;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media($mobile) {
+              padding: 2px;
+            }
+
+            h1, h2 {
+              font-family: trajanBold, tahoma, verdana, arial, sans-serif;
+              margin-bottom: 0;
+              margin-top: 1vh;
+              font-size: 1.3em;
+              width: 80%;
+              color: black;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              border-bottom: 1px solid black;
+
+              @include media($mobile) {
+                font-size: 1.2em;
+                line-height: 1.2em;
               }
+
+              a {
+                width: 80%;
+                color: black;
+                line-height: 2.5vh;
+              }
+            }
+
+            ul {
+              margin: 0;
+              margin-bottom: 2vh;
+              padding: 0;
+
+              @include media($mobile) {
+                width: 100%;
+              }
+
               li {
-                  padding: 0;
-                  margin: 0;
-                  list-style-type: none;
-                  height: 5vh;
-                  width: 100%;
-                  position: relative;
-                  @include background(linear-gradient($red, #95141c) left repeat);
+                background: none;
+                height: 2.5vh;
 
                 @include media($mobile) {
-                  display: none;
+                  height: auto;
+                  width: 100%;
                 }
-
 
                 a {
-                  color: $gold;
-                  font-family: trajan, Tahoma, Verdana;
-                  font-size: 1em;
-
-                  line-height: 5vh;
-                  text-align: center;
-                  margin-left: auto;
-                  margin-right: auto;
-                  text-decoration: none;
-                  display: block;
-                  cursor: pointer;
-
-                  .cara2 {
-                    background-image:url("/koberce/images/cara.png");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 1px;
-                    width: 10vw;
-                    text-align: center;
-                    margin-left: auto;
-                    margin-right: auto;
-                    padding: 0;
-                    display: block;
-                    position: relative;
-                    bottom: 1.7vh;
-                    left: 0vw;
-
-                    z-index: 100;
-
-                    @include media($mobile) {
-                      display: none;
-                    }
-                  }
-
-                }
-
-                .podkategorie {
-                  visibility: hidden;
-                  opacity: 0;
-                  transition: visibility 0s, opacity 0.5s linear;
-                  position: absolute;
-                  right: 15vw;
-                  top: 0vw;
-                  background-color: rgba(white, 0.9);
-                  width: 36vw;
-                  height: 42vh;
-                  border: 1px solid $red;
-                  border-radius: 5px;
+                  color: $red;
+                  background-color: none;
+                  background: none;
+                  line-height: 2.5vh;
+                  font-size: 0.9em;
+                  display: inline;
 
                   @include media($mobile) {
-                   position: static;
-                    top: 0;
-                    right: 0;
-                    width: 100%;
-                    min-height: 50vh;
-                    height: auto;
-                    background-color: rgba(white, 0.9);
-                    display: none;
-                    z-index: 999;
-
-
-                    &:hover {
-                     display: none;
-                    }
-
-                    &:after {
-                      content: '';
-                      display: block;
-                      clear: both;
-                    }
+                    font-size: 0.8em;
+                    line-height: 1em;
+                    font-family: tahoma, arial;
                   }
 
                   &:hover {
-                    display: block;
-                  }
-
-                  &:after {
-                    clear: both;
-                  }
-
-                  .sloupec {
-                    @include span-columns(6);
-                    padding: 5px;
-                    float: left;
-                    position: static;
-                    margin-left: auto;
-                    margin-right: auto;
-
-                    @include media($mobile) {
-                      padding: 2px;
-                    }
-
-
-
-                    h1,h2 {
-                      font-family: trajanBold, tahoma, verdana, arial, sans-serif;
-                      margin-bottom: 0;
-                      margin-top: 1vh;
-                      font-size: 1.3em;
-                      width: 80%;
-                      color: black;
-                      text-align: center;
-                      margin-left: auto;
-                      margin-right: auto;
-                      border-bottom: 1px solid black;
-
-                      @include media($mobile) {
-                        font-size: 1.2em;
-                        line-height: 1.2em;
-                      }
-
-
-                      a {
-                        width: 80%;
-                        color: black;
-                        line-height: 2.5vh;
-                      }
-                    }
-
-                    ul {
-                      margin: 0;
-                      margin-bottom: 2vh;
-                      padding: 0;
-
-                      @include media($mobile) {
-                       width: 100%;
-                      }
-
-                      li {
-                        background: none;
-                        height: 2.5vh;
-
-                        @include media($mobile) {
-                          height: auto;
-                          width: 100%;
-                        }
-
-
-                        a {
-                          color: $red;
-                          background-color: none;
-                          background: none;
-                          line-height: 2.5vh;
-                          font-size: 0.9em;
-                          display: inline;
-
-                          @include media($mobile) {
-                            font-size: 0.8em;
-                            line-height: 1em;
-                            font-family: tahoma, arial;
-                          }
-
-                          &:hover {
-                            text-decoration: underline;
-                          }
-                        }
-                      }
-                    }
+                    text-decoration: underline;
                   }
                 }
+              }
+            }
+          }
+        }
 
+        &:hover {
+          .podkategorie {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      .kat {
+        overflow-y: visible;
+
+        &:hover {
+          height: auto !important;
+
+          .podkategorie {
+            display: block;
+
+            @include media($mobile) {
+              display: none;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+         header.podkategorie {
+       background:none !important;
+       height: 20vh;
+       position: relative;
+
+       .hlavicka {
+       top:5vh;
+       }
+      }
+
+      .content2 {
+      width: 100%;
+      clear: both;
+
+      .hlavni {
+        @include span-columns(9);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vh;
+        padding-left: 2.5vw;
+        .popis {
+          border-bottom: 1px solid $red;
+          h1 {
+            font-family: trajanBold, Tahoma, Verdana;
+            text-align: center;
+            color: $red;
+          }
+        }
+
+        .podkategorie2 {
+          margin-top: 2vh;
+          width: 100%;
+          .kat2 {
+            @include div-columns(3/12, 0.5vw);
+            height: 23vh;
+            margin-bottom: 3vh;
+            border: 1px solid $grey;
+
+            a {
+              .obr {
+                height: 17.9vh;
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+
+              }
               &:hover {
-                .podkategorie {
-                  visibility: visible;
-                  opacity: 1;
+                .obr {
+                  opacity: .5;
+                  -moz-transition: all 0.3s ease-out;  /* FF4+ */
+                  -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+                  -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+                  -ms-transition: all 0.3s ease-out;  /* IE10? */
+                  transition: all 0.3s ease-out;
                 }
               }
+            }
+            a {
+              text-decoration: none;
+
+              .ramecek {
+                height: 4.1vh;
+                background-color: $red;
+                color: white;
+                position: relative;
+                top: 0.9vh;
+
+                h2 {
+                  text-align: center;
+                  color: $gold;
+                  font-family: trajan, Tahoma, Verdan;
+
+                  text-decoration: none;
+                  width: 60%;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-bottom: 1px solid $gold;
+
+                  position: absolute;
+                  top: 20%;
+                  left: 50%;
+                  transform: translateY(-50%) translateX(-50%);
+
+
+                }
               }
-              .kat {
-                overflow-y: visible;
+              &:hover {
+                .ramecek {
+                  background-color: $grey;
+                  transition: all 0.3s;
+                  h2 {
+                    width: 70%;
+                    color: black;
+                    border-bottom: 1px solid black;
+                    -webkit-transition: width 0.2s; /* Safari */
 
-                &:hover {
-                  height: auto !important;
-
-                  .podkategorie {
-                    display: block;
-
-                    @include media($mobile) {
-                      display: none;
-                    }
                   }
                 }
+              }
+            }
+
+          }
+        }
+
+        .filter {
+          width: 100%;
+          height: 10vh;
+          background-color: $grey;
+        }
+
+        .products {
+          width: 100%;
+          margin-top: 2vh;
+          margin-bottom: 5vh;
+
+          .product {
+            @include div-columns(4/12,0.5vw);
+            height: 30vh;
+            border: 1px solid $grey;
+            margin-bottom: 2vh;
+            a {
+              .obr {
+                height: 25vh;
+              }
+            }
+
+            .popisek {
+              height: 5vh;
+              h2{
+                text-align: center;
+                margin-top: 0;
+                line-height: 5vh;
 
               }
             }
           }
         }
+
       }
+      .prava {
+        @include span-columns(3);
+        max-width: 15vw;
+        position: relative;
+        float: right;
+        margin-bottom: 5vh;
+
+        .menu {
+          right: 0;
+          top: 0;
+          position: relative;
+        }
+
+        .categories {
+          clear: both;
+          padding-top: 1vh;
+
+            h2 {
+              text-align: center;
+              font-family: trajanBold, Tahoma, Verdana;
+              width: 60%;
+              border-bottom: 1px solid black;
+              margin-left: auto;
+              margin-right: auto;
+
+          }
+
+          ul.cats {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+              background-color: $grey;
+
+              height: 4vh;
+              padding: 0;
+              margin-top: 0.5vh;
+              a {
+                color: black;
+                font-weight: bold;
+                line-height: 4vh;
+                text-decoration: underline;
+                display: block;
+                text-align: center !important;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 1.2em;
+              }
+              a.plus {
+                text-align: left;
+                display: inline-block;
+                float: left;
+                position: relative;
+                left: 0.5vw;
+                font-size: 1.4em;
+                color: white !important;
+                i{
+
+                }
+
+                &:hover {
+                  color: $red;
+                }
+              }
+            }
+          }
+        }
+      }
+      }
+
     .content {
       position: relative;
       z-index: 15;
@@ -732,7 +939,7 @@ html {
 
               }
               .obr1 {
-                background-image: url('/koberce/images/obr1.jpg');
+                background-image: url('/images/obr1.jpg');
                 background-size: cover;
                 background-repeat: no-repeat;
               }
@@ -915,6 +1122,8 @@ html {
       }
     }
 
+
+
     footer {
       width: 100%;
       clear: both;
@@ -948,7 +1157,7 @@ html {
 
           .obr {
             @include span-columns(3);
-            background-image: url("/koberce/images/label.png");
+            background-image: url("/images/label.png");
             width: 4.5vh;
             height: 4.5vh;
             background-size: contain;

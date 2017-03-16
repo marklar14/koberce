@@ -26,7 +26,7 @@
 
   <body>
 
-  <header class="main">
+  <header class="podkategorie">
   <div class="hlavicka css3-shadow3">
   <div class="logo">
   <a href=""><img src="images/logo.png" alt=""/></a>
@@ -51,105 +51,27 @@
   <input type="text" name="search" placeholder="Hledat..."/> <button><i class="fa fa-search" aria-hidden="true"></i></button>
   </div>
   </div>
-  @include('partials.menu')
+
   </div>
   </header>
-  <section class="content">
-  <div class="boxes">
-  <div class="radek">
+  <section class="content2">
+  <div class="hlavni">
+       @include('partials.categories2')
+        <div class="clear"></div>
+        @include('partials.filtr')
+<div class="clear"></div>
+       @include('partials.products')
+<div class="clear"></div>
 
-
-  <a href="" class="kategorie">
-  <div class="box">
-    <div class="hover obr1">
-    <div class="vice">
-   <button>Více</button>
     </div>
-    </div>
-  <h1>Testovací kategorie</h1>
-       <div class="top"></div>
-  </div>
-  </a>
-  <a href="" class="kategorie">
-  <div class="box">
-    <div class="hover obr1">
-    <div class="vice">
-   <button>Více</button>
-    </div>
-    </div>
-  <h1>Testovací kategorie</h1>
-       <div class="top"></div>
-  </div>
-  </a>
-  <a href="" class="kategorie">
-  <div class="box">
-    <div class="hover obr1">
-    <div class="vice">
-   <button>Více</button>
-    </div>
-    </div>
-  <h1>Testovací kategorie</h1>
-       <div class="top"></div>
-  </div>
-  </a>
-  <a href="" class="kategorie">
-  <div class="box">
-    <div class="hover obr1">
-    <div class="vice">
-   <button>Více</button>
-    </div>
-    </div>
-  <h1>Testovací kategorie</h1>
-     <div class="top"></div>
-  </div>
-  </a>
-    </div>
-    </div>
-
-  <div class="bannery">
-  <div class="banner">
-  <a href="">
-  <img src="images/banner1.jpg" alt=""/>
-  </a>
-  </div>
-    <div class="banner">
-    <a href="">
-    <img src="images/banner1.jpg" alt=""/>
-    </a>
-    </div>
-  </div>
-
-  <div class="nabidka">
-  <h1>NABÍDKA KUSOVÝCH KOBERCŮ JE NAŠÍ OPRAVDOVOU CHLOUBOU!</h1>
-  <div class="leva">
-<h1>2 500 kusů koberců</h1>
-<p>Nabízíme více než 2.500 kusů pověšených na stojanech pro komfortní výběr
-    a další nespočet kusových koberců volně ložených ve velikostech od M až po XXL
-    a to ve více než třech tisícovkách designů. Běhouny do bytových i komerčních
-    prostor nabízíme samozřejmě také.</p>
-    <ul><li>
-    koberce metráž </li>
-   <li> koberce kusové a běhouny</li>
-   <li> koberce metráž luxusní a vlněné</li>
-    <li>zátěžové koberce</li>
-   </ul>
-  </div>
     <div class="prava">
-  <h1>150 druhů linolea</h1>
-  <p>v šířce od 1,5m do 5m. Další produkty lze vybírat ze vzorníku. Vinylové podlahy nabízíme
-      rovněž. Plovoucí podlahy jsou zastoupeny renomovanými značkami Krono Originál,
-      Kronotex, M Floor, Balterio, Tarkett. Tyto produkty skvěle imitují jak dřevo, tak i
-     kámen či dlažbu.</p>
-      <ul>
-          <li>PVC podlahy linoleum matroleum</li>
-          <li>plovoucí podlahy</li>
-          <li>vinylové podlahy</li>
-          <li>lepidla a stěrkový materiál</li>
-     </ul>
+       @include('partials.menu')
+       @include('partials.categories')
     </div>
-
-  </div>
   </section>
+
+
+
 
   <footer class="row2">
   <div class="leva column">

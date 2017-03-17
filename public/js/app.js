@@ -11203,6 +11203,7 @@ var app = new Vue({
     // el: '#app'
 });
 
+// JQUERY DROBNOSTI
 __webpack_require__(34);
 
 $(document).ready(function () {
@@ -11230,6 +11231,57 @@ $(document).ready(function () {
         if ($(window).width() <= 1000) {
             $('.kat .podkategorie').toggle(500);
         }
+    });
+
+    $('a.plus').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().find('ul.podkategorie3').toggle(500);
+    });
+
+    //produkt obrazky
+
+    $('.mini img').hover(function () {
+        var img = $(this).attr('src');
+        $('.images .hlavni').css('background-image', 'url(' + img + ')');
+    });
+
+    $('.mini img').on('click', function () {
+        if ($('body .showImage').length === 0) {
+            var bg = $(this).attr('src');
+
+            var str = '<div class="ztmavit"></div><div class="showImage"><div class="pic"><img src="' + bg + '" /><p class="zavrit"><a href="#">Zavřít</a></p></div> <div class="zavrit"><a href="#">x</a></div></div>';
+            $('body').append(str);
+            $('.ztmavit').fadeIn(400);
+            $('.showImage').show(500);
+        }
+
+        $('.zavrit a').on('click', function () {
+            $('.ztmavit').hide(500);
+            $('.showImage').hide(500);
+
+            $('.ztmavit').remove();
+            $('.showImage').remove();
+        });
+    });
+
+    $('.images .hlavni').on('click', function () {
+        if ($('body .showImage').length === 0) {
+            var bg = $(this).css('background-image');
+            bg = bg.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+
+            var str = '<div class="ztmavit"></div><div class="showImage"><div class="pic"><img src="' + bg + '" /><p class="zavrit"><a href="#">Zavřít</a></p></div> <div class="zavrit"><a href="#">x</a></div></div>';
+            $('body').append(str);
+            $('.ztmavit').fadeIn(400);
+            $('.showImage').show(500);
+        }
+
+        $('.zavrit a').on('click', function () {
+            $('.ztmavit').hide(500);
+            $('.showImage').hide(500);
+
+            $('.ztmavit').remove();
+            $('.showImage').remove();
+        });
     });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))

@@ -23,6 +23,7 @@ html {
   margin: 0;
   padding: 0;
 
+
   @include media($mobile) {
     width: 100%;
     font-size: 1em;
@@ -34,9 +35,10 @@ html {
     margin: 0;
     padding: 0;
     font-family: Tahoma, Verdana, Arial;
-    font-size: 0.6vw;
+    font-size: 0.8vw;
     margin-left: auto;
     margin-right: auto;
+
 
     @include media($mobile) {
       width: 100%;
@@ -62,6 +64,8 @@ html {
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
+
+        background-color: white;
 
 
 
@@ -408,7 +412,7 @@ html {
             background-repeat: no-repeat;
             background-size: contain;
             height: 1px;
-            width: 10vw;
+            width: 9vw;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
@@ -423,6 +427,21 @@ html {
             @include media($mobile) {
               display: none;
             }
+          }
+
+          &:hover {
+
+            .cara2 {
+              -moz-transition: all 0.5s ease-out;  /* FF4+ */
+              -o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
+              -webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
+              -ms-transition: all 0.5s ease-out;  /* IE10? */
+              transition: all 0.5s ease-out;
+
+              width: 13vw;
+
+            }
+
           }
 
         }
@@ -486,7 +505,7 @@ html {
               font-family: trajanBold, tahoma, verdana, arial, sans-serif;
               margin-bottom: 0;
               margin-top: 1vh;
-              font-size: 1.3em;
+              font-size: 1em;
               width: 80%;
               color: black;
               text-align: center;
@@ -529,7 +548,7 @@ html {
                   background-color: none;
                   background: none;
                   line-height: 2.5vh;
-                  font-size: 0.9em;
+                  font-size: 0.7em;
                   display: inline;
 
                   @include media($mobile) {
@@ -577,15 +596,20 @@ html {
        background:none !important;
        height: 20vh;
        position: relative;
+       background-color: rgba(white, 1);
+
 
        .hlavicka {
        top:5vh;
+         background-color: rgba(white, 1);
+         border: 0;
        }
       }
 
       .content2 {
       width: 100%;
       clear: both;
+      background-color: white !important;
 
       .hlavni {
         @include span-columns(9);
@@ -594,11 +618,15 @@ html {
         margin-bottom: 5vh;
         padding-left: 2.5vw;
         .popis {
-          border-bottom: 1px solid $red;
+
           h1 {
             font-family: trajanBold, Tahoma, Verdana;
             text-align: center;
             color: $red;
+            width: 100%;
+            border-bottom: 1px solid $red;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
 
@@ -646,6 +674,8 @@ html {
                   color: $gold;
                   font-family: trajan, Tahoma, Verdan;
 
+                  font-size: 0.7rem;
+
                   text-decoration: none;
                   width: 60%;
                   margin-left: auto;
@@ -679,9 +709,34 @@ html {
         }
 
         .filter {
-          width: 100%;
+          width: calc(100% - 1vw);
           height: 10vh;
           background-color: $grey;
+
+          .center {
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 10vh;
+            text-align: center;
+
+            .form-group {
+              display: inline-block;
+              margin-left: 0.5vw;
+              label {
+                font-size: 1.2em;
+                font-weight: bold;
+                padding: 0.5vw;
+              }
+              button {
+                background-color: $red;
+                color: white;
+                display: inline-block;
+                border: 1px solid $red;
+                padding: 0.5vw;
+                cursor: pointer;
+              }
+            }
+          }
         }
 
         .products {
@@ -695,19 +750,204 @@ html {
             border: 1px solid $grey;
             margin-bottom: 2vh;
             a {
+              text-decoration: none !important;
               .obr {
                 height: 25vh;
+                background-repeat: no-repeat;
+                  -webkit-transition: all 1s ease; /* Safari and Chrome */
+                  -moz-transition: all 1s ease; /* Firefox */
+                  -ms-transition: all 1s ease; /* IE 9 */
+                  -o-transition: all 1s ease; /* Opera */
+                  transition: all 1s ease;
+
               }
+
+              &:hover {
+                .obr {
+                    -webkit-transform:scale(0.3); /* Safari and Chrome */
+                    -moz-transform:scale(0.3); /* Firefox */
+                    -ms-transform:scale(0.3); /* IE 9 */
+                    -o-transform:scale(0.3); /* Opera */
+                    transform:scale(1.05);
+                }
+
+                .popisek {
+                  h2 {
+                    font-size: 1rem;
+                  }
+                }
+              }
+
+              .popisek {
+                height: 5vh;
+                h2{
+                  text-align: center;
+                  margin-top: 0;
+                  line-height: 5vh;
+                  color: $red;
+                  font-size: 0.8rem;
+                  text-decoration: none !important;
+
+                  -webkit-transition: all 1s ease; /* Safari and Chrome */
+                  -moz-transition: all 1s ease; /* Firefox */
+                  -ms-transition: all 1s ease; /* IE 9 */
+                  -o-transition: all 1s ease; /* Opera */
+                  transition: all 1s ease;
+
+                }
+              }
+
+
             }
 
-            .popisek {
-              height: 5vh;
-              h2{
-                text-align: center;
-                margin-top: 0;
-                line-height: 5vh;
+
+          }
+        }
+
+        .product {
+          width: 100%;
+
+          h1 {
+            color: $red;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            border-bottom: 1px solid $red;
+            font-family: trajanBold, Tahoma, Verdana;
+            margin-bottom: 0;
+          }
+          .top {
+            margin-top: 1vh;
+
+            .images {
+              margin-top: 0;
+              height: 57vh;
+              @include div-columns(5/12);
+
+              .hlavni {
+                width: 100%;
+                height: 40vh;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                margin-bottom: 1vh;
+
+                cursor: pointer;
+
+                -moz-transition: all 0.5s ease-out;  /* FF4+ */
+                -o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
+                -webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
+                -ms-transition: all 0.5s ease-out;  /* IE10? */
+                transition: all 0.5s ease-out;
+
+
+                &:after {
+                  content: " ";
+                  display: block;
+                  clear: both;
+                }
 
               }
+              .miniatury {
+                width: 100%;
+                height: 15vh;
+
+                a {
+                  display: block;
+                  height: 15vh;
+
+
+                  .mini {
+                    @include div-columns(4/12, 0.5vw);
+                    margin-left: 0;
+                    border: 1px solid $grey;
+                    height: 15vh;
+                    position: relative;
+
+                    img {
+                      width: 100%;
+                      max-height: 15vh;
+                      clear: both;
+                      top: 50%;
+                      position: absolute;
+                      transform: translateY(-50%);
+
+                    }
+                  }
+                }
+
+              }
+
+            }
+            .vlastnosti {
+              @include div-columns(7/12);
+
+              table {
+                margin-left: 1%;
+                width: 98%;
+                border-spacing: 0;
+                border-collapse: separate;
+                margin-bottom: 1vh;
+
+                tr {
+                  border-bottom: 1px solid $red;
+
+                  td {
+                    border: 0;
+                    padding: 0.5vw;
+                    margin: 0;
+
+                    &:nth-of-type(2) {
+                      text-align: right;
+                    }
+
+                  }
+
+                  &:nth-of-type(even) {
+                    background-color: $grey;
+                  }
+                }
+                &:nth-of-type(even) {
+                  tr {
+                    &:nth-of-type(even) {
+                      background-color: $yellow;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .bottom {
+            margin-top: 1vh;
+            width: 100%;
+            text-align: center;
+            h2 {
+              color: $red;
+              font-family: trajanBold, Tahoma, Verdana;
+              width: 100%;
+              border-bottom: 1px solid $red;
+              margin-left: auto;
+              text-align: center;
+              margin-right: auto;
+            }
+            h3 {
+              color: darken($grey, 30%);
+              font-family: trajanBold, Tahoma, Verdana;
+              text-decoration: underline;
+              margin-left: auto;
+              text-align: center;
+              margin-right: auto;
+              margin-top: 0;
+            }
+            .mezera {
+              margin-top: 2vh;
+            }
+            .popis {
+              margin-top: 0;
+              background-color: lighten($grey, 20%);
+              border: 1px solid $grey;
+              padding: 1vw;
             }
           }
         }
@@ -737,6 +977,7 @@ html {
               border-bottom: 1px solid black;
               margin-left: auto;
               margin-right: auto;
+              font-size: 1rem;
 
           }
 
@@ -747,10 +988,11 @@ html {
             li {
               background-color: $grey;
 
-              height: 4vh;
+
               padding: 0;
               margin-top: 0.5vh;
               a {
+                height: 4vh;
                 color: black;
                 font-weight: bold;
                 line-height: 4vh;
@@ -759,7 +1001,7 @@ html {
                 text-align: center !important;
                 margin-right: auto;
                 margin-left: auto;
-                font-size: 1.2em;
+                font-size: 1.1em;
               }
               a.plus {
                 text-align: left;
@@ -769,12 +1011,49 @@ html {
                 left: 0.5vw;
                 font-size: 1.4em;
                 color: white !important;
-                i{
-
-                }
+                z-index: 30;
 
                 &:hover {
                   color: $red;
+                }
+              }
+
+              a.plus2 {
+                position: relative;
+                right: 0.5vw;
+                z-index: 10;
+              }
+              ul.podkategorie3 {
+                display: none;
+                clear: both;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                  background-color: lighten($grey,10%);
+                  margin: 0;
+
+                  height: 4vh;
+                  padding: 0;
+
+                  i {
+                    display: inline-block;
+                    font-size: 1.8em;
+                    line-height: 4vh;
+                    padding-left: 0.5vw;
+                  }
+
+                  a {
+                    color: $red;
+                    font-weight: bold;
+                    line-height: 4vh;
+                    text-decoration: none;
+                    display: block;
+                    text-align: center !important;
+                    margin-right: auto;
+                    margin-left: auto;
+                    font-size: 1.1em;
+                  }
                 }
               }
             }
@@ -787,6 +1066,7 @@ html {
       position: relative;
       z-index: 15;
       width: 100%;
+      background-color: white;
 
 
       @include media($mobile) {

@@ -78,3 +78,67 @@
 .clear {
   clear: both;
 }
+
+.showImage {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform:translateX(-50%) translateY(-50%);
+
+  width: 70vw;
+  height: 80vh;
+
+  z-index: 100;
+
+  background-color: white;
+
+  .pic {
+    width: 60%;
+    height: auto;
+    max-height: 50vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+    }
+
+    .zavrit {
+      position: static;
+      color: $red;
+      text-align: center;
+      clear: both;
+    }
+
+  }
+
+
+  .zavrit {
+    position: absolute;
+
+    right: 5px;
+    top: 5px;
+
+    a {
+      color: $red;
+      font-weight: bold;
+    }
+  }
+
+
+}
+
+.ztmavit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(black, 0.6);
+  z-index: 50;
+}

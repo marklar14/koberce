@@ -8,8 +8,6 @@ Metrážové koberce nabízíme v nepřeberném množství barev, materiálů a 
 <a href="">
 <div class="obr" style="background-image: url({{ url("images/podlaha.jpg") }});">
 </div>
-</a>
-<a href="">
 <div class="ramecek">
 <h2>Kategorie</h2>
 </div>
@@ -20,8 +18,6 @@ Metrážové koberce nabízíme v nepřeberném množství barev, materiálů a 
 <a href="">
 <div class="obr" style="background-image: url({{ url("images/podlaha.jpg") }});">
 </div>
-</a>
-<a href="">
 <div class="ramecek">
 <h2>Kategorie</h2>
 </div>
@@ -31,30 +27,16 @@ Metrážové koberce nabízíme v nepřeberném množství barev, materiálů a 
 <a href="">
 <div class="obr" style="background-image: url({{ url("images/podlaha.jpg") }});">
 </div>
-</a>
-<a href="">
 <div class="ramecek">
 <h2>Kategorie</h2>
 </div>
 </a>
 </div>
+
 <div class="kat2">
 <a href="">
 <div class="obr" style="background-image: url({{ url("images/podlaha.jpg") }});">
 </div>
-</a>
-<a href="">
-<div class="ramecek">
-<h2>Kategorie</h2>
-</div>
-</a>
-</div>
-<div class="kat2">
-<a href="">
-<div class="obr" style="background-image: url({{ url("images/podlaha.jpg") }});">
-</div>
-</a>
-<a href="">
 <div class="ramecek">
 <h2>Kategorie</h2>
 </div>

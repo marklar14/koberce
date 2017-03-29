@@ -7,6 +7,7 @@
 @import "node_modules/slick-carousel/slick/slick.scss";
 @import "node_modules/slick-carousel/slick/slick-theme.scss";
 
+
 // Variables
 @import "variables";
 @import "animate";
@@ -592,24 +593,42 @@ html {
     }
   }
 
-         header.podkategorie {
+       header.podkategorie {
        background:none !important;
        height: 20vh;
-       position: relative;
+       position: fixed;
+       top: 0;
        background-color: rgba(white, 1);
-
+       margin-left: auto;
+       margin-right: auto;
+       width: 90%;
 
        .hlavicka {
        top:5vh;
          background-color: rgba(white, 1);
          border: 0;
+
+         -moz-transition: all 0.3s ease-out;  /* FF4+ */
+         -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+         -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+         -ms-transition: all 0.3s ease-out;  /* IE10? */
+         transition: all 0.3s ease-out;
+
        }
+        .sloupec {
+           -moz-transition: all 0.3s ease-out;  /* FF4+ */
+           -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+           -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+           -ms-transition: all 0.3s ease-out;  /* IE10? */
+           transition: all 0.3s ease-out;
+         }
       }
 
       .content2 {
       width: 100%;
       clear: both;
       background-color: white !important;
+      margin-top: 21vh;
 
       .hlavni {
         @include span-columns(9);
@@ -674,7 +693,8 @@ html {
                   color: $gold;
                   font-family: trajan, Tahoma, Verdan;
 
-                  font-size: 0.7rem;
+                  font-size: 1.4vh;
+
 
                   text-decoration: none;
                   width: 60%;
@@ -825,45 +845,45 @@ html {
               height: 57vh;
               @include div-columns(5/12);
 
-              .hlavni {
-                width: 100%;
+              a {
+                width: auto;
                 height: 40vh;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                margin-bottom: 1vh;
+                max-height: 40vh;
+                max-width: 100%;
+                min-width: 100%;
+                display: block;
+                position: relative;
+                img {
+                  width: auto;
+                  height: 39.5vh;
+                  max-height: 40vh;
+                  max-width: 100%;
+                  min-width: 100%;
+                  margin-bottom: 1vh;
 
-                cursor: pointer;
-
-                -moz-transition: all 0.5s ease-out;  /* FF4+ */
-                -o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
-                -webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
-                -ms-transition: all 0.5s ease-out;  /* IE10? */
-                transition: all 0.5s ease-out;
+                  cursor: pointer;
 
 
-                &:after {
-                  content: " ";
-                  display: block;
-                  clear: both;
+                  &:after {
+                    content: " ";
+                    display: block;
+                    clear: both;
+                  }
+
                 }
-
               }
+
               .miniatury {
                 width: 100%;
                 height: 15vh;
 
-                a {
+                .mini {
                   display: block;
                   height: 15vh;
-
-
-                  .mini {
-                    @include div-columns(4/12, 0.5vw);
-                    margin-left: 0;
-                    border: 1px solid $grey;
-                    height: 15vh;
-                    position: relative;
+                  @include div-columns(4/12, 0.5vw);
+                  margin-left: 0;
+                  border: 1px solid $grey;
+                  position: relative;
 
                     img {
                       width: 100%;
@@ -872,8 +892,8 @@ html {
                       top: 50%;
                       position: absolute;
                       transform: translateY(-50%);
+                      cursor: pointer;
 
-                    }
                   }
                 }
 
@@ -1124,10 +1144,11 @@ html {
 
             div.box
             {
-              @include span-columns(3);
+
               background:rgba($yellow,0.8);
               border-radius: 3px;
-              margin-left: 1.3vw;
+              margin-left: 1vw;
+              margin-right: 1vw;
               height: 28vh;
               position: relative;
               z-index: 80;

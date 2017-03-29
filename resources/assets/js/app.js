@@ -30,6 +30,34 @@ $(document).ready(function() {
         arrows: true
     });
 
+    $('.boxes .radek').slick({
+        accessibility: true,
+        autoplay: true,
+        arrows: true,
+        slidesToShow: 4,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: 'unslick'
+            }
+        ]
+
+    });
+
+    require('magnify');
+
+    var $zoom = $('.zoom').magnify();
+
+    $('html').on({
+        magnifystart: function() {
+            console.log('magnifystart event fired');
+        },
+        magnifyend: function() {
+            console.log('magnifyend event fired');
+        }
+    });
+
+
     $('.resp ul li a').on('click', function (e) {
         e.preventDefault();
 
@@ -59,7 +87,30 @@ $(document).ready(function() {
 
     $('.mini img').hover(function() {
         var img = $(this).attr('src');
-        $('.images .hlavni').css('background-image', 'url(' + img + ')');
+        var big = $(this).attr('data-big');
+
+        if(img !=  $('.images a img').attr('src'))
+        {
+           // $('.images a img').attr('src', img).hide(300).fadeIn(300);
+
+            $(".images a img")
+                .fadeOut(400, function() {
+                    $(".images a img").attr('src',img);
+                })
+                .fadeIn(400);
+
+            $('.images a img').attr('data-magnify-src', big);
+
+            $zoom.destroy();
+
+           $zoom = $('.zoom').magnify({
+                speed: 200,
+                src: big
+            });
+
+            $('.images a').attr('href', big);
+        }
+
     });
 
     $('.mini img').on('click', function() {
@@ -82,10 +133,10 @@ $(document).ready(function() {
         });
     });
 
-    $('.images .hlavni').on('click', function() {
+    $('.images a').on('click', function() {
         if($('body .showImage').length === 0 )
         {
-            var bg = $(this).css('background-image');
+            var bg = $(this).attr('href');
             bg = bg.replace('url(','').replace(')','').replace(/\"/gi, "");
 
             var str = '<div class="ztmavit"></div><div class="showImage"><div class="pic"><img src="' + bg + '" /><p class="zavrit"><a href="#">Zavřít</a></p></div> <div class="zavrit"><a href="#">x</a></div></div>';
@@ -102,6 +153,30 @@ $(document).ready(function() {
             $('.showImage').remove();
         });
     });
+
+    //scroll
+    $(window).scroll(function (event) {
+        var top = $(window).scrollTop();
+        var hide = false;
+        // Do something
+
+
+        if(!hide) {
+            $('.podkategorie .sloupec').hide();
+            $('.podkategorie .hlavicka').css('top','0');
+            $('.podkategorie .hlavicka').css('height','8vh');
+            hide = true;
+        }
+
+        if(top == 0)
+        {
+            $('.podkategorie .hlavicka').css('top','5vh');
+            $('.podkategorie .sloupec').show();
+            $('.podkategorie .hlavicka').css('height','15vh');
+            hide = false;
+        }
+    });
+
 
 });
 

@@ -12,7 +12,10 @@
     "jquery": "^3.1.1",
     "laravel-mix": "^0.7.2",
     "lodash": "^4.17.4",
-    "vue": "^2.1.10"
+    "magnify": "^1.6.17",
+    "vue": "^2.1.10",
+    "vue-template-compiler": "^2.0.8",
+    "webpack": "2.2.1"
   },
   "dependencies": {
     "bourbon": "^4.3.2",

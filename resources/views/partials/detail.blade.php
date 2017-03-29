@@ -2,18 +2,16 @@
 <h1>Produkt A</h1>
 <div class="top">
 <div class="images">
-<div class="hlavni" style="background-image: url({{ url('images/koberec.jpg')  }})"></div>
+<a href="{{ url('images/koberec-big.jpg')   }}">
+<img src="{{ url('images/koberec.jpg')   }}" class="zoom" data-magnify-src="{{ url('images/koberec-big.jpg')  }}" alt=""/>
+</a>
 <div class="miniatury">
-<a href="">
 <div class="mini">
-<img src="{{ url('images/koberec.jpg')  }}" alt=""/>
+<img src="{{ url('images/koberec.jpg')   }}" data-big="{{ url('images/koberec-big.jpg')   }}" alt=""/>
 </div>
-</a>
-<a href="">
 <div class="mini">
-<img src="{{ url('images/koberec2.jpg')   }}" alt=""/>
+<img src="{{ url('images/koberec2.jpg')   }}" data-big="{{ url('images/koberec2-big.jpg')   }}" alt=""/>
 </div>
-</a>
 </div>
 </div>
 <div class="vlastnosti">

@@ -57,8 +57,6 @@
   <section class="content">
   <div class="boxes">
   <div class="radek">
-
-
   <a href="" class="kategorie">
   <div class="box">
     <div class="hover obr1">
@@ -70,6 +68,28 @@
        <div class="top"></div>
   </div>
   </a>
+    <a href="" class="kategorie">
+    <div class="box">
+      <div class="hover obr1">
+      <div class="vice">
+     <button>Více</button>
+      </div>
+      </div>
+    <h1>Testovací kategorie</h1>
+         <div class="top"></div>
+    </div>
+    </a>
+      <a href="" class="kategorie">
+      <div class="box">
+        <div class="hover obr1">
+        <div class="vice">
+       <button>Více</button>
+        </div>
+        </div>
+      <h1>Testovací kategorie</h1>
+           <div class="top"></div>
+      </div>
+      </a>
   <a href="" class="kategorie">
   <div class="box">
     <div class="hover obr1">

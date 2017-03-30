@@ -16,12 +16,10 @@ Route::get('/', function () {
         "meta_description" => "Moderní responzivní design pro vás, moderní responzivní design, úspěšné internetové obchody, Wordpress, Drupal, moderní eshop Opencart a další..."]);;
 });
 
-Route::get('/podkategorie', function () {
-    return view('partials.category')->with(["title" => "Work And Joy", "meta_keywords" => "Moderní responzivní design, Moderní webové stránky, úspěšné internetové obchody, Opencart",
-        "meta_description" => "Moderní responzivní design pro vás, moderní responzivní design, úspěšné internetové obchody, Wordpress, Drupal, moderní eshop Opencart a další..."]);;
-});
-
 Route::get('/produkt', function () {
     return view('partials.product')->with(["title" => "Work And Joy", "meta_keywords" => "Moderní responzivní design, Moderní webové stránky, úspěšné internetové obchody, Opencart",
         "meta_description" => "Moderní responzivní design pro vás, moderní responzivní design, úspěšné internetové obchody, Wordpress, Drupal, moderní eshop Opencart a další..."]);;
 });
+
+//category
+Route::GET('/podkategorie','CategoryController@getCategory');
